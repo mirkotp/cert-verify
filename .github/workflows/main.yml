@@ -9,12 +9,10 @@ jobs:
         container:
             image: 'mirkotp/cert-verify'
             volumes:
-                - ./CA:/CA
-                - ./Untrusted:/Untrusted
+                - ${GITHUB_ACTION_PATH}/CA:/CA
+                - ${GITHUB_ACTION_PATH}/Untrusted:/Untrusted
         steps:
             - name: VERIFY CERTIFICATES
-              run: ls
+              run: sh /entry.sh
             - name: VERIFY CERTIFICATES 2
-              run: pwd
-            - name: VERIFY CERTIFICATES 3
-              run: echo ${{ github.workspace }}
+              run: echo ${GITHUB_ACTION_PATH}
