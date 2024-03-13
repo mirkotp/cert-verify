@@ -4,12 +4,13 @@ on:
   push:
     branches: [ main ]
 jobs:
-    my-job:
+    container-job:
         runs-on: ubuntu-latest
         container:
+            image: 'mirkotp/cert-verify'
             volumes:
                 - ${{ github.workspace }}/CA:/CA
                 - ${{ github.workspace }}/Untrusted:/Untrusted
         steps:
-            - uses: docker://mirkotp/cert-verify
-        
+            - name: VERIFY CERTIFICATES
+              run: sh entry.sh
