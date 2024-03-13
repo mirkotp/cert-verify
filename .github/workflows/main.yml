@@ -13,4 +13,4 @@ jobs:
                 - Untrusted:/Untrusted
         steps:
             - name: VERIFY CERTIFICATES
-              run: ls /CA
+              run: cd /CA & ls
