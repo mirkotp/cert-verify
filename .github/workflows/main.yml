@@ -14,8 +14,6 @@ jobs:
         steps:
             - name: Checkout repo
               uses: actions/checkout@v2
-            - name: Make tmp
-              run: mkdir /tmp
             - name: VERIFY CERTIFICATES
               run: sh /entry.sh
                
