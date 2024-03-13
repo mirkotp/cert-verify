@@ -9,14 +9,8 @@ jobs:
         container:
             image: 'mirkotp/cert-verify'
             volumes:
-                - CA:/CA
-                - Untrusted:/Untrusted
+                - /__w/cert-verify/cert-verify/CA:/CA
+                - /__w/cert-verify/cert-verify/Untrusted:/Untrusted
         steps:
-            # - name: VERIFY CERTIFICATES
-            #   run: sh /entry.sh
-            - name: VERIFY CERTIFICATES 2
-              run: cd /
-            - name: VERIFY CERTIFICATES 22
-              run: ls
-            - name: VERIFY CERTIFICATES 3
-              run: pwd
+            - name: VERIFY CERTIFICATES
+              run: sh /entry.sh
