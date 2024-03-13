@@ -11,3 +11,6 @@ jobs:
             volumes:
                 - ./CA:/CA
                 - ./Untrusted:/Untrusted
+        steps:
+            - name: Check for dockerenv file
+              run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
