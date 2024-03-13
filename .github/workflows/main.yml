@@ -17,4 +17,4 @@ jobs:
             - name: VERIFY CERTIFICATES 2
               run: pwd
             - name: VERIFY CERTIFICATES 3
-              run: ls CA
+              run: echo ${{ github.workspace }}
