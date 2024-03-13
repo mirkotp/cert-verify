@@ -4,13 +4,12 @@ on:
   push:
     branches: [ main ]
 jobs:
-    container-job:
+    my-job:
         runs-on: ubuntu-latest
         container:
-            image: 'mirkotp/cert-verify'
             volumes:
-                -  ${{ github.workspace }}/CA:/CA
-                -  ${{ github.workspace }}/Untrusted:/Untrusted
+                - ${{ github.workspace }}/CA:/CA
+                - ${{ github.workspace }}/Untrusted:/Untrusted
         steps:
-            - name: Check for dockerenv file
-              run: ls
+            - uses: docker://mirkotp/cert-verify
+        
