@@ -14,3 +14,4 @@ jobs:
         steps:
             - name: VERIFY CERTIFICATES
               run: sh /entry.sh
+               
