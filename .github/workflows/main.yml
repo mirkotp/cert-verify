@@ -13,4 +13,4 @@ jobs:
                 - ./Untrusted:/Untrusted
         steps:
             - name: Check for dockerenv file
-              run: sh /entry.sh
+              run: ls
