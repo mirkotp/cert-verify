@@ -13,4 +13,4 @@ jobs:
                 - ./Untrusted:/Untrusted
         steps:
             - name: Check for dockerenv file
-              run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
+              run: sh /entry.sh
