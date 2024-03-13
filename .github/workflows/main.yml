@@ -13,4 +13,4 @@ jobs:
                 - ${{ github.workspace }}/Untrusted:/Untrusted
         steps:
             - name: VERIFY CERTIFICATES
-              run: sh entry.sh
+              run: sh /entry.sh
