@@ -1,0 +1,9 @@
+# main.yml
+name: 'Verify certificates'
+description: 'Verify certificates'
+runs:
+  using: 'docker'
+  image: 'mirkotp/cert-verify'
+  volumes:
+    - ./CA:/CA
+    - ./Untrusted:/Untrusted
