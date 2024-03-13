@@ -9,9 +9,11 @@ jobs:
         container:
             image: 'mirkotp/cert-verify'
             volumes:
-                - /__w/cert-verify/cert-verify/CA:${{ github.workspace }}/CA/
-                - /__w/cert-verify/cert-verify/Untrusted:${{ github.workspace }}/Untrusted
+                - ./CA:/CA/
+                - ./Untrusted:/Untrusted
         steps:
+            - name: VERIFY CERTIFICATES2
+              run: cd /
             - name: VERIFY CERTIFICATES
               run: sh /entry.sh
                
