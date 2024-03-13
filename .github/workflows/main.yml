@@ -1,6 +1,8 @@
 # main.yml
-name: 'Verify certificates'
-description: 'Verify certificates'
+name: CI
+on:
+  push:
+    branches: [ main ]
 runs:
   using: 'docker'
   image: 'mirkotp/cert-verify'
