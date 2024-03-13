@@ -8,10 +8,10 @@ jobs:
         runs-on: ubuntu-latest
         container:
             image: 'mirkotp/cert-verify'
-            options: -v $GITHUB_WORKSPACE/CA:/CA/:rw -v $GITHUB_WORKSPACE/Untrusted:/Untrusted/:rw
+            volumes:
+                - /__w/cert-verify/cert-verify/CA:${{ github.workspace }}/CA/
+                - /__w/cert-verify/cert-verify/Untrusted:${{ github.workspace }}/Untrusted
         steps:
-            - name: VERIFY CERTIFICATES 1
-              run: pwd
             - name: VERIFY CERTIFICATES
               run: sh /entry.sh
                
