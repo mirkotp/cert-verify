@@ -3,9 +3,11 @@ name: CI
 on:
   push:
     branches: [ main ]
-runs:
-  using: 'docker'
-  image: 'mirkotp/cert-verify'
-  volumes:
-    - ./CA:/CA
-    - ./Untrusted:/Untrusted
+jobs:
+    container-job:
+        runs-on: ubuntu-latest
+        container:
+            image: 'mirkotp/cert-verify'
+            volumes:
+                - ./CA:/CA
+                - ./Untrusted:/Untrusted
