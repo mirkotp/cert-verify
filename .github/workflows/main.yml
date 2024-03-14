@@ -14,7 +14,9 @@ jobs:
         steps:
             - name: Checkout repo
               uses: actions/checkout@v4
-            - name: VERIFY CERTIFICATES
-              uses: docker://mirkotp/cert-verify:latest
+            - uses: addnab/docker-run-action@v3
               with:
-                entrypoint: -v ${{ github.workspace }}/CA:/CA -v ${{ github.workspace }}/Untrusted:/Untrusted sh /entry.sh
+                image: mirkotp/cert-verify:latest
+                options: -v ${{ github.workspace }}/CA:/CA -v ${{ github.workspace }}/Untrusted:/Untrusted
+            - name: VERIFY CERTIFICATES
+              run: sh /entry.sh
