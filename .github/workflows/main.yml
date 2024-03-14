@@ -17,5 +17,4 @@ jobs:
             - name: VERIFY CERTIFICATES
               uses: docker://mirkotp/cert-verify:latest
               with:
-                args: >-
-                    -v ${{ github.workspace }}/CA:/CA -v ${{ github.workspace }}/Untrusted:/Untrusted
+                options: -v ${{ github.workspace }}/CA:/CA -v ${{ github.workspace }}/Untrusted:/Untrusted
