@@ -22,8 +22,9 @@ jobs:
                 run: |
                   echo ""    
                   echo ""    
+                  echo "--- START CERTIFICATES VERIFY ---"    
+                  echo ""    
+                  echo ""    
                   echo ""    
                   sh /entry.sh
-                  echo ""    
-                  echo ""    
                   echo ""    
