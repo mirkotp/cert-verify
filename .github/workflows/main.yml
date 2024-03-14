@@ -15,16 +15,6 @@ jobs:
             - name: Checkout repo
               uses: actions/checkout@v4
             - name: VERIFY CERTIFICATES
-              uses: addnab/docker-run-action@v3
-              with:
-                image: mirkotp/cert-verify:latest
-                options: -v ${{ github.workspace }}/CA:/CA -v ${{ github.workspace }}/Untrusted:/Untrusted
-                run: |
-                  echo ""    
-                  echo ""    
-                  echo "--- START CERTIFICATES VERIFY ---"    
-                  echo ""    
-                  echo ""    
-                  echo ""    
-                  sh /entry.sh
-                  echo ""    
+              run: | 
+                docker pull mirkotp/cert-verify
+                docker run -v ${{ github.workspace }}/CA:/CA -v ${{ github.workspace }}/Untrusted:/Untrusted mirkotp/cert-verify
