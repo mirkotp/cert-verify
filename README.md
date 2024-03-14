@@ -1,1 +1,1 @@
-![Workflow badge](https://github.com/mirkotp/github-actions-workflow/actions/workflows/main.yml/badge.svg)
+![Workflow badge](https://github.com/mirkotp/cert-verify/actions/workflows/main.yml/badge.svg)
