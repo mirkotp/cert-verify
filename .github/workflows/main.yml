@@ -6,13 +6,16 @@ on:
 jobs:
     container-job:
         runs-on: ubuntu-latest
+        container:
+            image: 'mirkotp/cert-verify'
+            volumes:
+                - ${{ github.workspace }}/CA:/CA
+                - ${{ github.workspace }}/Untrusted:/Untrusted
         steps:
             - name: Checkout repo
-              uses: actions/checkout@v4
+              uses: actions/checkout@v2
+            - run: ls
+            - run: ls /
             - name: VERIFY CERTIFICATES
-              uses: docker://mirkotp/cert-verify:latest
-              with:
-                args: >-
-                    -v ${{ github.workspace }}/CA:/CA
-                    -v ${{ github.workspace }}/Untrusted:/Untrusted
+              run: sh /entry.sh
                
