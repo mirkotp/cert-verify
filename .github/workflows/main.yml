@@ -9,8 +9,8 @@ jobs:
         container:
             image: 'mirkotp/cert-verify:latest'
             volumes:
-                - ${{ github.workspace }}/CA:/CA
-                - ${{ github.workspace }}/Untrusted:/Untrusted
+                - ${{ github.workspace }}/CAd:/CA
+                - ${{ github.workspace }}/Untrudsted:/Untrusted
         steps:
             - name: Checkout repo
               uses: actions/checkout@v4
