@@ -11,5 +11,5 @@ jobs:
               uses: actions/checkout@v4
             - name: VERIFY CERTIFICATES
               run: | 
-                docker pull -q mirkotp/cert-verify
+                docker pull -q mirkotp/cert-verify > /dev/null
                 docker run -q -v ${{ github.workspace }}/CA:/CA -v ${{ github.workspace }}/Untrusted:/Untrusted mirkotp/cert-verify
