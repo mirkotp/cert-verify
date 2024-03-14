@@ -18,5 +18,4 @@ jobs:
               with:
                 image: mirkotp/cert-verify:latest
                 options: -v ${{ github.workspace }}/CA:/CA -v ${{ github.workspace }}/Untrusted:/Untrusted
-            - name: VERIFY CERTIFICATES
-              run: sh /entry.sh
+                run: sh /entry.sh
