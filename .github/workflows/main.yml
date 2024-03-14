@@ -1,5 +1,5 @@
 # main.yml
-name: CI
+name: Certificate check
 on:
   push:
     branches: [ main ]
