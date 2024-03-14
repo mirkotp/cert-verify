@@ -15,7 +15,7 @@ jobs:
             - name: Checkout repo
               uses: actions/checkout@v2
             - run: ls CA/
-            - run: ls /CA/
+            - run: pwd
             - name: VERIFY CERTIFICATES
               run: sh /entry.sh
                
