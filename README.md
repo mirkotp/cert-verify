@@ -1,4 +1,4 @@
-Uses GitHub Workflows to run a Docker image ([mirkotp/cert-verify](https://hub.docker.com/r/mirkotp/cert-verify)) that verifies certificates.
+Uses GitHub Actions to run a Docker image ([mirkotp/cert-verify](https://hub.docker.com/r/mirkotp/cert-verify)) that verifies certificates.
 
 ## Usage
 
